@@ -1,55 +1,36 @@
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { Link } from "react-router-dom";
+import { ChevronLeft, ChevronRight } from "../icons/icons.jsx";
 
-export default function ProjectMechanics({ project }) {
-  // Skip als er geen mechanics zijn
-  if (!project.mechanics || project.mechanics.length === 0) {
-    return null;
-  }
-
+export default function ProjectPrevNext({ previous, next }) {
   return (
-    <div className="mx-4">
-      <h2 className="text-xl font-semibold text-(--text) mb-4">Code Highlights</h2>
+    <div className="mx-4 mt-12 mb-20 pt-8 border-t border-white/5 flex flex-col sm:flex-row gap-4 items-center justify-between">
+      {previous && (
+        <Link 
+          to={previous.url}
+          className="group flex flex-col items-start gap-1 px-6 py-4 rounded-2xl bg-white/5 border border-white/5 hover:border-emerald-500/30 hover:bg-emerald-500/5 transition-all w-full sm:w-auto"
+        >
+          <span className="flex items-center gap-1 text-xs font-mono text-zinc-500 uppercase tracking-widest group-hover:text-emerald-400 font-medium">
+            <ChevronLeft className="w-3 h-3" /> Previous Project
+          </span>
+          <span className="text-lg font-semibold text-zinc-300 group-hover:text-white transition-colors">
+            {previous.title}
+          </span>
+        </Link>
+      )}
 
-      {project.mechanics.map((m, i) => (
-        <div key={i} className="flex flex-col gap-4 border-b border-(--bordercolor) pb-4 mb-4">
-          {/* Title + Description */}
-          <div>
-            <h3 className="text-lg font-semibold mb-2 text-(--text)">{m.subtitle}</h3>
-            <p className="leading-relaxed text-(--muted)">{m.description}</p>
-          </div>
-
-          {/* Code + Image Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-[65%_35%] gap-4">
-            {/* Code block with syntax highlighting */}
-            <div className="h-60 overflow-auto rounded-lg">
-              <SyntaxHighlighter
-                language="csharp"
-                style={vscDarkPlus}
-                customStyle={{
-                  margin: 0,
-                  borderRadius: "0.5rem",
-                  fontSize: "1rem",
-                  height: "100%",
-                }}
-                showLineNumbers={true}>
-                {m.code}
-              </SyntaxHighlighter>
-            </div>
-
-            {/* Preview image */}
-            {m.image && (
-              <a href={m.image} target="_blank" rel="noopener noreferrer">
-                <img
-                  src={m.image}
-                  alt={m.subtitle}
-                  className="w-full h-60 object-cover rounded-lg cursor-pointer hover:opacity-80 transition-opacity"
-                />
-              </a>
-            )}
-          </div>
-        </div>
-      ))}
+      {next && (
+        <Link 
+          to={next.url}
+          className="group flex flex-col items-end text-right gap-1 px-6 py-4 rounded-2xl bg-white/5 border border-white/5 hover:border-emerald-500/30 hover:bg-emerald-500/5 transition-all w-full sm:w-auto"
+        >
+          <span className="flex items-center gap-1 text-xs font-mono text-zinc-500 uppercase tracking-widest group-hover:text-emerald-400 font-medium">
+            Next Project <ChevronRight className="w-3 h-3" />
+          </span>
+          <span className="text-lg font-semibold text-zinc-300 group-hover:text-white transition-colors">
+            {next.title}
+          </span>
+        </Link>
+      )}
     </div>
   );
 }

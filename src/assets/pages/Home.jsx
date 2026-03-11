@@ -1,50 +1,98 @@
 import { siteConfig } from "../../siteConfig";
 import ProjectCard from "../../components/projects/ProjectCard";
 import projectData from "../../components/data/projectdata.json";
+import { Github, Linkedin, Mail, ExternalLink } from "lucide-react";
 
 export default function Home() {
-  // Haal projects array uit de JSON
-  const projects = projectData.projects; 
+  const projects = projectData.projects;
 
   return (
-    <div>
-      {/* Hero Section */}
-      <section className="relative py-20 px-4">
-        
-        {/* Decoratieve glow achter foto */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-(--accent) rounded-full blur-3xl opacity-20"/>
-        
-        {/* Informatie */}
-        <div className="container mx-auto flex flex-col items-center text-center relative z-10">
-          
-          {/* Profielfoto */}
-          <img
-            src={siteConfig.aboutImage}
-            alt={siteConfig.name}
-            className="w-40 h-40 rounded-full object-cover border-4 border-(--accent) shadow-lg mb-6"
-          />
+    <div className="flex flex-col lg:flex-row gap-8 lg:gap-20 w-full min-h-[80vh]">
 
-          {/* Naam en rol */}
-          <h1 className="text-5xl font-bold text-(--text) mb-2">{siteConfig.name}</h1>
-          <p className="text-xl text-(--accent) font-medium mb-4">{siteConfig.role}</p>
-          
-          {/* Tagline */}
-          <p className="text-lg text-(--muted) max-w-xl mb-8">{siteConfig.tagline}</p>
+      {/* ══════════════════════════════════════
+          LEFT PANEL — Identity & Mini Game
+      ══════════════════════════════════════ */}
+      <section className="w-full lg:w-[42%] lg:sticky lg:top-28 h-fit flex flex-col gap-8 pt-4">
+
+        {/* Status badge */}
+        <div className="flex items-center gap-2 text-sm">
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+          </span>
+          <span className="text-emerald-400 font-mono tracking-wider text-xs uppercase">Available for work</span>
         </div>
-      </section>
-              {/* Projecten Section */}
-      <section className="py-16 px-4">
-        <div className="container mx-auto">
-          <h2 className="text-3xl font-bold text-(--text) mb-8 text-center">Mijn Projecten</h2>
 
-          {/* Grid met ProjectCards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {projects.map((project) => (
-              <ProjectCard key={project.id} project={project} />
-            ))}
+        {/* Profile cluster */}
+        <div className="flex items-center gap-5">
+          <div className="relative shrink-0">
+            <div className="absolute -inset-1 rounded-full bg-gradient-to-br from-emerald-500 to-blue-500 opacity-40 blur-md"></div>
+            <img
+              src={siteConfig.aboutImage}
+              alt={siteConfig.name}
+              className="relative w-20 h-20 rounded-full object-cover border border-white/10 z-10"
+            />
+          </div>
+          <div>
+            <p className="text-xs text-zinc-500 font-mono tracking-widest uppercase mb-1">XR Developer</p>
+            <h1 className="text-4xl font-bold text-white tracking-tight leading-tight font-heading">
+              {siteConfig.name.split(" ")[0]}<br />
+              <span className="text-zinc-400 font-light">{siteConfig.name.split(" ")[1]}</span>
+            </h1>
           </div>
         </div>
+
+        {/* Tagline */}
+        <p className="text-zinc-400 text-base leading-relaxed border-l-2 border-emerald-500/40 pl-4">
+          {siteConfig.tagline}
+        </p>
+
+        {/* Skills chips */}
+        <div className="flex flex-wrap gap-2">
+          {[...siteConfig.hardSkills, ...siteConfig.softSkills.slice(0, 2)].map((s, i) => (
+            <span key={i} className="px-3 py-1 text-xs font-mono text-zinc-400 border border-white/8 rounded-full bg-white/3 hover:border-emerald-500/50 hover:text-emerald-400 transition-colors cursor-default">
+              {s}
+            </span>
+          ))}
+        </div>
+
+        {/* Socials + CTA */}
+        <div className="flex items-center gap-4 pt-2">
+          <a href={`mailto:${siteConfig.socials.email}`} className="p-2.5 rounded-xl border border-white/8 hover:border-emerald-500/50 hover:text-emerald-400 text-zinc-400 transition-all" aria-label="Email">
+            <Mail size={16} />
+          </a>
+          <a href={siteConfig.socials.github} target="_blank" rel="noreferrer" className="p-2.5 rounded-xl border border-white/8 hover:border-emerald-500/50 hover:text-emerald-400 text-zinc-400 transition-all" aria-label="GitHub">
+            <Github size={16} />
+          </a>
+          <a href={siteConfig.socials.linkedin} target="_blank" rel="noreferrer" className="p-2.5 rounded-xl border border-white/8 hover:border-emerald-500/50 hover:text-emerald-400 text-zinc-400 transition-all" aria-label="LinkedIn">
+            <Linkedin size={16} />
+          </a>
+          <a href={siteConfig.cv} target="_blank" rel="noreferrer" className="ml-auto flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white text-black text-sm font-semibold hover:bg-emerald-400 transition-colors">
+            Resume <ExternalLink size={14} />
+          </a>
+        </div>
       </section>
+
+
+      {/* ══════════════════════════════════════
+          RIGHT PANEL — Work Gallery
+      ══════════════════════════════════════ */}
+      <section className="w-full lg:w-[58%] flex flex-col pt-4 pb-20">
+
+        {/* Section header */}
+        <div className="mb-10 pb-6 border-b border-white/5">
+          <p className="text-xs font-mono tracking-widest text-zinc-600 uppercase mb-2">// selected work</p>
+          <h2 className="text-3xl font-bold text-white font-heading">Featured Projects</h2>
+        </div>
+
+        {/* Project list */}
+        <div className="flex flex-col divide-y divide-white/[0.04]">
+          {projects.map((project, index) => (
+            <ProjectCard key={project.id} project={project} index={index} />
+          ))}
+        </div>
+      </section>
+
     </div>
   );
 }

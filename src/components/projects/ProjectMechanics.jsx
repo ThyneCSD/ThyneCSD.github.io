@@ -8,48 +8,57 @@ export default function ProjectMechanics({ project }) {
   }
 
   return (
-    <div className="mx-4">
-      <h2 className="text-xl font-semibold text-(--text) mb-4">Code Highlights</h2>
+    <div className="mx-4 mt-12">
+      <h2 className="text-xl font-bold text-white mb-6 font-heading flex items-center gap-2">
+        <span className="w-8 h-[1px] bg-emerald-500/50"></span>
+        Code Highlights
+      </h2>
 
-      {project.mechanics.map((m, i) => (
-        <div key={i} className="flex flex-col gap-4 border-b border-(--bordercolor) pb-4 mb-4">
-          {/* Title + Description */}
-          <div>
-            <h3 className="text-lg font-semibold mb-2 text-(--text)">{m.subtitle}</h3>
-            <p className="leading-relaxed text-(--muted)">{m.description}</p>
-          </div>
-
-          {/* Code + Image Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-[65%_35%] gap-4">
-            {/* Code block with syntax highlighting */}
-            <div className="h-60 overflow-auto rounded-lg">
-              <SyntaxHighlighter
-                language="csharp"
-                style={vscDarkPlus}
-                customStyle={{
-                  margin: 0,
-                  borderRadius: "0.5rem",
-                  fontSize: "1rem",
-                  height: "100%",
-                }}
-                showLineNumbers={true}>
-                {m.code}
-              </SyntaxHighlighter>
+      <div className="space-y-12">
+        {project.mechanics.map((m, i) => (
+          <div key={i} className="flex flex-col gap-6 group">
+            {/* Title + Description */}
+            <div className="max-w-3xl">
+              <h3 className="text-lg font-semibold mb-2 text-zinc-200 group-hover:text-emerald-400 transition-colors">{m.subtitle}</h3>
+              <p className="leading-relaxed text-zinc-400">{m.description}</p>
             </div>
 
-            {/* Preview image */}
-            {m.image && (
-              <a href={m.image} target="_blank" rel="noopener noreferrer">
-                <img
-                  src={m.image}
-                  alt={m.subtitle}
-                  className="w-full h-60 object-cover rounded-lg cursor-pointer hover:opacity-80 transition-opacity"
-                />
-              </a>
+            {/* Code + Image Grid — only when content exists */}
+            {(m.code || m.image) && (
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                {m.code && (
+                  <div className="h-[400px] overflow-auto rounded-xl border border-white/5 bg-black/40 ring-1 ring-white/10">
+                    <SyntaxHighlighter
+                      language="csharp"
+                      style={vscDarkPlus}
+                      customStyle={{
+                        margin: 0,
+                        padding: '1.5rem',
+                        background: 'transparent',
+                        fontSize: "0.9rem",
+                        lineHeight: "1.5",
+                      }}
+                      showLineNumbers={true}>
+                      {m.code}
+                    </SyntaxHighlighter>
+                  </div>
+                )}
+                {m.image && (
+                  <div className="h-[400px] rounded-xl overflow-hidden border border-white/5 bg-white/5 ring-1 ring-white/10">
+                    <a href={m.image} target="_blank" rel="noopener noreferrer" className="block h-full group/img">
+                      <img
+                        src={m.image}
+                        alt={m.subtitle}
+                        className="w-full h-full object-cover cursor-pointer group-hover/img:scale-105 transition-transform duration-500"
+                      />
+                    </a>
+                  </div>
+                )}
+              </div>
             )}
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 }
