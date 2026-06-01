@@ -2,42 +2,42 @@
   "hash": "f0c92348",
   "configHash": "f6ae7710",
   "lockfileHash": "778ae284",
-  "browserHash": "4fae5300",
+  "browserHash": "5f23ac7b",
   "optimized": {
     "react": {
       "src": "../../node_modules/react/index.js",
       "file": "react.js",
-      "fileHash": "d466c7c5",
+      "fileHash": "f4176a27",
       "needsInterop": true
     },
     "react-dom/client": {
       "src": "../../node_modules/react-dom/client.js",
       "file": "react-dom_client.js",
-      "fileHash": "10e3fd6d",
+      "fileHash": "81db7f23",
       "needsInterop": true
     },
     "react-router-dom": {
       "src": "../../node_modules/react-router-dom/dist/index.mjs",
       "file": "react-router-dom.js",
-      "fileHash": "c1949294",
-      "needsInterop": false
-    },
-    "react-syntax-highlighter": {
-      "src": "../../node_modules/react-syntax-highlighter/dist/esm/index.js",
-      "file": "react-syntax-highlighter.js",
-      "fileHash": "cf553953",
-      "needsInterop": false
-    },
-    "react-syntax-highlighter/dist/esm/styles/prism": {
-      "src": "../../node_modules/react-syntax-highlighter/dist/esm/styles/prism/index.js",
-      "file": "react-syntax-highlighter_dist_esm_styles_prism.js",
-      "fileHash": "57360c71",
+      "fileHash": "2a78fae6",
       "needsInterop": false
     },
     "lucide-react": {
       "src": "../../node_modules/lucide-react/dist/esm/lucide-react.js",
       "file": "lucide-react.js",
-      "fileHash": "97e9a682",
+      "fileHash": "467770f9",
+      "needsInterop": false
+    },
+    "react-syntax-highlighter": {
+      "src": "../../node_modules/react-syntax-highlighter/dist/esm/index.js",
+      "file": "react-syntax-highlighter.js",
+      "fileHash": "148e5178",
+      "needsInterop": false
+    },
+    "react-syntax-highlighter/dist/esm/styles/prism": {
+      "src": "../../node_modules/react-syntax-highlighter/dist/esm/styles/prism/index.js",
+      "file": "react-syntax-highlighter_dist_esm_styles_prism.js",
+      "fileHash": "1b65ff05",
       "needsInterop": false
     }
   },
@@ -1509,6 +1509,9 @@
     "arcade-IOCO4HEH": {
       "file": "arcade-IOCO4HEH.js"
     },
+    "chunk-R3E4LXVO": {
+      "file": "chunk-R3E4LXVO.js"
+    },
     "chunk-BZ52RYQL": {
       "file": "chunk-BZ52RYQL.js"
     },
@@ -2975,9 +2978,6 @@
     },
     "chunk-VDYPYHNK": {
       "file": "chunk-VDYPYHNK.js"
-    },
-    "chunk-R3E4LXVO": {
-      "file": "chunk-R3E4LXVO.js"
     },
     "chunk-P6RTVJOB": {
       "file": "chunk-P6RTVJOB.js"

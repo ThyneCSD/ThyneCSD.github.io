@@ -122,7 +122,7 @@ export function LanguageProvider({ children }) {
 }
 
 
-    // getTranslated implementation moved to languageUtils.js
+
 
 export function useLanguage() {
   const context = useContext(LanguageContext);
