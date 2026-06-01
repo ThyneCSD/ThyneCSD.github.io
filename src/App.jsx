@@ -5,7 +5,7 @@ import Starfield from "./components/Starfield"; // IMPORT STARFIELD
 
 export default function App() {
   return (
-    <div className="min-h-screen flex flex-col relative w-full overflow-hidden text-zinc-100">
+    <div className="min-h-screen flex flex-col relative w-full overflow-x-hidden overflow-y-auto text-zinc-100">
       
       {/* 1. SPACE BACKGROUND CANVAS */}
       <Starfield />

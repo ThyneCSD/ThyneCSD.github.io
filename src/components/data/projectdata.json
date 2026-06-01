@@ -3,8 +3,14 @@
     {
       "id": "after-hours",
       "title": "After Hours",
-      "tagline": "A tense psychological horror prototype set in a mysterious, eerie office space.",
-      "description": "After Hours is a downloadable horror prototype that plunges players into a claustrophobic and atmospheric environment. Originally created for the Brackeys Game Jam 2026.1, the project has evolved into a detailed study of tension and environmental storytelling.\n\nYou explore a strange, interactive office filled with secrets. Every object tells a story, and every shadow feels heavier than the last. The game features realistic computer interactions, a complex vent system, and a dynamic audio experience that keeps you on edge.\n\nKey features include character-by-character text rendering, interactive props like ladders and buckets, and a progression system that leads to multiple unique discovery points and a complete ending.\n\nImportant reminder for players: You run with SHIFT!",
+      "tagline": {
+        "nl": "Een zenuwslopend psychologisch horrorprototype in een mysterieuze, griezelige kantooromgeving.",
+        "en": "A tense psychological horror prototype set in a mysterious, eerie office space."
+      },
+      "description": {
+        "nl": "After Hours is een downloadbaar horrorprototype dat spelers onderdompelt in een claustrofobische en sfeervolle omgeving. Oorspronkelijk gemaakt voor de Brackeys Game Jam 2026.1, is het project uitgegroeid tot een gedetailleerde studie van spanning en omgevingsvertellingen.\n\nJe verkent een vreemd, interactief kantoor vol geheimen. Elk object vertelt een verhaal, en elke schaduw voelt zwaarder dan de vorige. De game bevat realistische computerinteracties, een complex ventilatiesysteem en een dynamische audio-ervaring die je op het puntje van je stoel houdt.\n\nBelangrijke herinnering voor spelers: Rennen doe je met SHIFT!",
+        "en": "After Hours is a downloadable horror prototype that plunges players into a claustrophobic and atmospheric environment. Originally created for the Brackeys Game Jam 2026.1, the project has evolved into a detailed study of tension and environmental storytelling.\n\nYou explore a strange, interactive office filled with secrets. Every object tells a story, and every shadow feels heavier than the last. The game features realistic computer interactions, a complex vent system, and a dynamic audio experience that keeps you on edge.\n\nKey features include character-by-character text rendering, interactive props like ladders and buckets, and a progression system that leads to multiple unique discovery points and a complete ending.\n\nImportant reminder for players: You run with SHIFT!"
+      },
       "thumbnail": "https://img.itch.zone/aW1hZ2UvNDI2OTc2Ny8yNTYzMTQxOS5wbmc=/original/BU%2Fztg.png",
       "youtube": "",
       "screenshots": [
@@ -20,24 +26,45 @@
         "Atmospheric",
         "Windows"
       ],
-      "projectRole": "Solo Developer",
+      "projectRole": {
+        "nl": "Solo Ontwikkelaar",
+        "en": "Solo Developer"
+      },
       "timeline": "Brackeys Game Jam 2026.1",
       "mechanics": [
         {
-          "subtitle": "Interactive Terminals",
-          "description": "Functional computer systems where text renders character-by-character, allowing for a more immersive and realistic hacking/exploration experience.",
+          "subtitle": {
+            "nl": "Interactieve Terminals",
+            "en": "Interactive Terminals"
+          },
+          "description": {
+            "nl": "Werkende computersystemen waar tekst letter voor letter verschijnt, wat zorgt voor een meer meeslepende en realistische hacking/verkenning-ervaring.",
+            "en": "Functional computer systems where text renders character-by-character, allowing for a more immersive and realistic hacking/exploration experience."
+          },
           "image": "https://img.itch.zone/aW1hZ2UvNDI2OTc2Ny8yNTYzMTQyMC5wbmc=/original/y47zjy.png",
           "code": "// Character-by-character typing effect snippet\nIEnumerator TypeText(string text) {\n    uiText.text = \"\";\n    foreach (char c in text.ToCharArray()) {\n        uiText.text += c;\n        yield return new WaitForSeconds(typingSpeed);\n        audioSource.PlayOneShot(typingSound);\n    }\n}"
         },
         {
-          "subtitle": "Environmental Navigation",
-          "description": "A claustrophobic vent system that requires players to use ladders and navigate tight spaces to uncover the deeper secrets of the facility.",
+          "subtitle": {
+            "nl": "Omgevingsnavigatie",
+            "en": "Environmental Navigation"
+          },
+          "description": {
+            "nl": "Een claustrofobisch ventilatiesysteem dat vereist dat spelers ladders gebruiken en door krappe ruimtes navigeren om de diepere geheimen van de faciliteit te ontdekken.",
+            "en": "A claustrophobic vent system that requires players to use ladders and navigate tight spaces to uncover the deeper secrets of the facility."
+          },
           "image": "https://img.itch.zone/aW1hZ2UvNDI2OTc2Ny8yNTYzMTQyMy5wbmc=/original/AubnIH.png",
           "code": ""
         },
         {
-          "subtitle": "Dynamic Atmosphere",
-          "description": "A combination of scheduled announcements, radio triggers, and visual effects like blood room transitions to create a constantly shifting sense of dread.",
+          "subtitle": {
+            "nl": "Dynamische Sfeer",
+            "en": "Dynamic Atmosphere"
+          },
+          "description": {
+            "nl": "Een combinatie van geplande omroepen, radiotriggers en visuele effecten zoals bloederige kamerovergangen om een constant veranderend gevoel van angst te creëren.",
+            "en": "A combination of scheduled announcements, radio triggers, and visual effects like blood room transitions to create a constantly shifting sense of dread."
+          },
           "image": "https://img.itch.zone/aW1hZ2UvNDI2OTc2Ny8yNTYzMTQyNC5wbmc=/original/2S4ELg.png",
           "code": ""
         }
@@ -48,8 +75,14 @@
     {
       "id": "3d-platformer",
       "title": "3D Platformer",
-      "tagline": "Hier komt later nog info over dit project.",
-      "description": "Hier komt later nog info over dit project.\n\nMore info coming soon.",
+      "tagline": {
+        "nl": "Hier komt later nog info over dit project.",
+        "en": "More information about this project will be added here later."
+      },
+      "description": {
+        "nl": "Hier komt later nog info over dit project.\n\nMore info coming soon.",
+        "en": "More information about this project will be added here later.\n\nMore info coming soon."
+      },
       "thumbnail": "https://picsum.photos/seed/platformer3d/1200/600",
       "youtube": "",
       "screenshots": [],
@@ -59,12 +92,24 @@
         "3D",
         "Platformer"
       ],
-      "projectRole": "Hier komt later nog info",
-      "timeline": "Hier komt later nog info",
+      "projectRole": {
+        "nl": "Hier komt later nog info",
+        "en": "More information coming soon"
+      },
+      "timeline": {
+        "nl": "Hier komt later nog info",
+        "en": "More information coming soon"
+      },
       "mechanics": [
         {
-          "subtitle": "Hier komt later nog info",
-          "description": "Hier komt later nog info over de mechanics van dit project.",
+          "subtitle": {
+            "nl": "Hier komt later nog info",
+            "en": "More information coming soon"
+          },
+          "description": {
+            "nl": "Hier komt later nog info over de mechanics van dit project.",
+            "en": "More information about the mechanics of this project will be added here later."
+          },
           "image": "",
           "code": ""
         }
@@ -75,8 +120,14 @@
     {
       "id": "vr-shooter",
       "title": "VrShooter",
-      "tagline": "Hier komt later nog info over dit project.",
-      "description": "Hier komt later nog info over dit project.\n\nMore info coming soon.",
+      "tagline": {
+        "nl": "Hier komt later nog info over dit project.",
+        "en": "More information about this project will be added here later."
+      },
+      "description": {
+        "nl": "Hier komt later nog info over dit project.\n\nMore info coming soon.",
+        "en": "More information about this project will be added here later.\n\nMore info coming soon."
+      },
       "thumbnail": "https://picsum.photos/seed/vrshooter/1200/600",
       "youtube": "",
       "screenshots": [],
@@ -87,12 +138,24 @@
         "VR",
         "Shooter"
       ],
-      "projectRole": "Hier komt later nog info",
-      "timeline": "Hier komt later nog info",
+      "projectRole": {
+        "nl": "Hier komt later nog info",
+        "en": "More information coming soon"
+      },
+      "timeline": {
+        "nl": "Hier komt later nog info",
+        "en": "More information coming soon"
+      },
       "mechanics": [
         {
-          "subtitle": "Hier komt later nog info",
-          "description": "Hier komt later nog info over de mechanics van dit project.",
+          "subtitle": {
+            "nl": "Hier komt later nog info",
+            "en": "More information coming soon"
+          },
+          "description": {
+            "nl": "Hier komt later nog info over de mechanics van dit project.",
+            "en": "More information about the mechanics of this project will be added here later."
+          },
           "image": "",
           "code": ""
         }
@@ -103,8 +166,14 @@
     {
       "id": "kuru-kuru-kururin",
       "title": "Kuru Kuru Kururin",
-      "tagline": "Hier komt later nog info over dit project.",
-      "description": "Hier komt later nog info over dit project.\n\nMore info coming soon.",
+      "tagline": {
+        "nl": "Hier komt later nog info over dit project.",
+        "en": "More information about this project will be added here later."
+      },
+      "description": {
+        "nl": "Hier komt later nog info over dit project.\n\nMore info coming soon.",
+        "en": "More information about this project will be added here later.\n\nMore info coming soon."
+      },
       "thumbnail": "https://picsum.photos/seed/kururin/1200/600",
       "youtube": "",
       "screenshots": [],
@@ -114,12 +183,24 @@
         "2D",
         "Puzzle"
       ],
-      "projectRole": "Hier komt later nog info",
-      "timeline": "Hier komt later nog info",
+      "projectRole": {
+        "nl": "Hier komt later nog info",
+        "en": "More information coming soon"
+      },
+      "timeline": {
+        "nl": "Hier komt later nog info",
+        "en": "More information coming soon"
+      },
       "mechanics": [
         {
-          "subtitle": "Hier komt later nog info",
-          "description": "Hier komt later nog info over de mechanics van dit project.",
+          "subtitle": {
+            "nl": "Hier komt later nog info",
+            "en": "More information coming soon"
+          },
+          "description": {
+            "nl": "Hier komt later nog info over de mechanics van dit project.",
+            "en": "More information about the mechanics of this project will be added here later."
+          },
           "image": "",
           "code": ""
         }
@@ -130,8 +211,14 @@
     {
       "id": "project-publish",
       "title": "Project publish",
-      "tagline": "Hier komt later nog info over dit project.",
-      "description": "Hier komt later nog info over dit project.\n\nMore info coming soon.",
+      "tagline": {
+        "nl": "Hier komt later nog info over dit project.",
+        "en": "More information about this project will be added here later."
+      },
+      "description": {
+        "nl": "Hier komt later nog info over dit project.\n\nMore info coming soon.",
+        "en": "More information about this project will be added here later.\n\nMore info coming soon."
+      },
       "thumbnail": "https://picsum.photos/seed/publish/1200/600",
       "youtube": "",
       "screenshots": [],
@@ -141,12 +228,24 @@
         "3D",
         "Publish"
       ],
-      "projectRole": "Hier komt later nog info",
-      "timeline": "Hier komt later nog info",
+      "projectRole": {
+        "nl": "Hier komt later nog info",
+        "en": "More information coming soon"
+      },
+      "timeline": {
+        "nl": "Hier komt later nog info",
+        "en": "More information coming soon"
+      },
       "mechanics": [
         {
-          "subtitle": "Hier komt later nog info",
-          "description": "Hier komt later nog info over de mechanics van dit project.",
+          "subtitle": {
+            "nl": "Hier komt later nog info",
+            "en": "More information coming soon"
+          },
+          "description": {
+            "nl": "Hier komt later nog info over de mechanics van dit project.",
+            "en": "More information about the mechanics of this project will be added here later."
+          },
           "image": "",
           "code": ""
         }

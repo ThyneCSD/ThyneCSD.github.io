@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
+import { useLanguage } from "../../context/LanguageContext";
 
 export default function ProjectCard({ project, index }) {
+  const { t, getTranslated } = useLanguage();
+
   return (
     <Link to={`/projects/${project.id}`} className="group block py-8 w-full">
       <div className="flex flex-col sm:flex-row gap-6 items-start">
@@ -40,12 +43,12 @@ export default function ProjectCard({ project, index }) {
 
           {/* Description */}
           <p className="text-sm text-zinc-500 leading-relaxed line-clamp-2">
-            {project.tagline}
+            {getTranslated(project.tagline)}
           </p>
 
           {/* CTA arrow */}
           <div className="flex items-center gap-2 text-xs text-zinc-600 group-hover:text-emerald-400 transition-colors duration-300 font-mono">
-            <span>View Project</span>
+            <span>{t("viewProject")}</span>
             <ArrowUpRight size={13} className="transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
           </div>
         </div>

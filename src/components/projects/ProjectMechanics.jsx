@@ -1,7 +1,10 @@
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { useLanguage } from "../../context/LanguageContext";
 
 export default function ProjectMechanics({ project }) {
+  const { t, getTranslated } = useLanguage();
+
   // Skip als er geen mechanics zijn
   if (!project.mechanics || project.mechanics.length === 0) {
     return null;
@@ -11,7 +14,7 @@ export default function ProjectMechanics({ project }) {
     <div className="mx-4 mt-12">
       <h2 className="text-xl font-bold text-white mb-6 font-heading flex items-center gap-2">
         <span className="w-8 h-[1px] bg-emerald-500/50"></span>
-        Code Highlights
+        {t("mechanics")}
       </h2>
 
       <div className="space-y-12">
@@ -19,8 +22,8 @@ export default function ProjectMechanics({ project }) {
           <div key={i} className="flex flex-col gap-6 group">
             {/* Title + Description */}
             <div className="max-w-3xl">
-              <h3 className="text-lg font-semibold mb-2 text-zinc-200 group-hover:text-emerald-400 transition-colors">{m.subtitle}</h3>
-              <p className="leading-relaxed text-zinc-400">{m.description}</p>
+              <h3 className="text-lg font-semibold mb-2 text-zinc-200 group-hover:text-emerald-400 transition-colors">{getTranslated(m.subtitle)}</h3>
+              <p className="leading-relaxed text-zinc-400">{getTranslated(m.description)}</p>
             </div>
 
             {/* Code + Image Grid — only when content exists */}
@@ -48,7 +51,7 @@ export default function ProjectMechanics({ project }) {
                     <a href={m.image} target="_blank" rel="noopener noreferrer" className="block h-full group/img">
                       <img
                         src={m.image}
-                        alt={m.subtitle}
+                        alt={getTranslated(m.subtitle)}
                         className="w-full h-full object-cover cursor-pointer group-hover/img:scale-105 transition-transform duration-500"
                       />
                     </a>

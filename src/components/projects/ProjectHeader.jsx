@@ -1,4 +1,8 @@
+import { useLanguage } from "../../context/LanguageContext";
+
 export default function ProjectHeader({ project }) {
+  const { getTranslated } = useLanguage();
+
   return (
     <div className="relative w-full h-[300px] md:h-[450px] mb-12 overflow-hidden rounded-3xl border border-white/10 group">
       {/* Banner Image with subtle hover zoom */}
@@ -24,7 +28,7 @@ export default function ProjectHeader({ project }) {
         </h1>
         
         <p className="text-lg md:text-xl text-zinc-300 font-medium leading-relaxed max-w-xl">
-          {project.tagline}
+          {getTranslated(project.tagline)}
         </p>
       </div>
 

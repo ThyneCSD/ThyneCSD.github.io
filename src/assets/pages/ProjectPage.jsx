@@ -5,18 +5,22 @@ import ProjectInfo from "../../components/projects/ProjectInfo";
 import ProjectGallery from "../../components/projects/ProjectGallery";
 import ProjectMechanics from "../../components/projects/ProjectMechanics";
 import ProjectPrevNext from "../../components/projects/ProjectPrevNext";
+import { useLanguage } from "../../context/LanguageContext";
 
-const isPlaceholder = (project) =>
-  !project.description || project.description.toLowerCase().includes("hier komt later");
+const isPlaceholder = (project, getTranslated) => {
+  const desc = getTranslated(project.description);
+  return !desc || desc.toLowerCase().includes("hier komt later") || desc.toLowerCase().includes("more info coming");
+};
 
 export default function ProjectPage() {
   const { projectId } = useParams();
+  const { t, getTranslated } = useLanguage();
   const project = projectData.projects.find(p => p.id === projectId);
 
   if (!project) {
     return (
-      <div className="container mx-auto px-4 py-20 text-center text-zinc-400">
-        Project niet gevonden
+      <div className="container mx-auto px-4 py-20 text-center text-zinc-400 font-heading">
+        {t("projectNotFound")}
       </div>
     );
   }
@@ -35,7 +39,7 @@ export default function ProjectPage() {
   };
 
   // ── Coming Soon Page ──────────────────────────────────────────
-  if (isPlaceholder(project)) {
+  if (isPlaceholder(project, getTranslated)) {
     return (
       <div className="flex flex-col items-center justify-center min-h-[70vh] text-center px-6">
         {/* Glowing title */}
@@ -46,25 +50,16 @@ export default function ProjectPage() {
           </h1>
         </div>
 
-        {/* In development badge */}
-        <div className="flex items-center gap-3 mb-8 px-6 py-3 rounded-full border border-emerald-500/30 bg-emerald-500/5">
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-          </span>
-          <span className="text-emerald-400 font-mono text-sm tracking-wider">IN DEVELOPMENT</span>
-        </div>
-
-        <p className="text-2xl text-zinc-400 mb-3 max-w-lg leading-relaxed">
-          Hier komt later meer info over dit project.
+        <p className="text-2xl text-zinc-400 mb-3 max-w-lg leading-relaxed font-body">
+          {t("comingSoonText")}
         </p>
-        <p className="text-sm text-zinc-600 font-mono mb-12">— stay tuned —</p>
+        <p className="text-sm text-zinc-600 font-mono mb-12">{t("stayTuned")}</p>
 
         <Link
           to="/"
-          className="px-6 py-3 rounded-full border border-white/10 text-zinc-400 hover:text-white hover:border-white/30 transition-all text-sm"
+          className="px-6 py-3 rounded-full border border-white/10 text-zinc-400 hover:text-white hover:border-white/30 transition-all text-sm font-mono"
         >
-          ← Back to work
+          {t("backToHome")}
         </Link>
       </div>
     );

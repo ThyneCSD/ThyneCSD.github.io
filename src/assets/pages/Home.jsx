@@ -2,9 +2,14 @@ import { siteConfig } from "../../siteConfig";
 import ProjectCard from "../../components/projects/ProjectCard";
 import projectData from "../../components/data/projectdata.json";
 import { Github, Linkedin, Mail, ExternalLink } from "lucide-react";
+import { useLanguage } from "../../context/LanguageContext";
 
 export default function Home() {
+  const { lang, t, getTranslated } = useLanguage();
   const projects = projectData.projects;
+
+  const hardSkillsList = getTranslated(siteConfig.hardSkills) || [];
+  const softSkillsList = getTranslated(siteConfig.softSkills) || [];
 
   return (
     <div className="flex flex-col lg:flex-row gap-8 lg:gap-20 w-full min-h-[80vh]">
@@ -20,7 +25,7 @@ export default function Home() {
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
           </span>
-          <span className="text-emerald-400 font-mono tracking-wider text-xs uppercase">Available for work</span>
+          <span className="text-emerald-400 font-mono tracking-wider text-xs uppercase">{t("available")}</span>
         </div>
 
         {/* Profile cluster */}
@@ -44,12 +49,12 @@ export default function Home() {
 
         {/* Tagline */}
         <p className="text-zinc-400 text-base leading-relaxed border-l-2 border-emerald-500/40 pl-4">
-          {siteConfig.tagline}
+          {getTranslated(siteConfig.tagline)}
         </p>
 
         {/* Skills chips */}
         <div className="flex flex-wrap gap-2">
-          {[...siteConfig.hardSkills, ...siteConfig.softSkills.slice(0, 2)].map((s, i) => (
+          {[...hardSkillsList, ...softSkillsList.slice(0, 2)].map((s, i) => (
             <span key={i} className="px-3 py-1 text-xs font-mono text-zinc-400 border border-white/8 rounded-full bg-white/3 hover:border-emerald-500/50 hover:text-emerald-400 transition-colors cursor-default">
               {s}
             </span>
@@ -68,7 +73,7 @@ export default function Home() {
             <Linkedin size={16} />
           </a>
           <a href={siteConfig.cv} target="_blank" rel="noreferrer" className="ml-auto flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white text-black text-sm font-semibold hover:bg-emerald-400 transition-colors">
-            Resume <ExternalLink size={14} />
+            {t("resume")} <ExternalLink size={14} />
           </a>
         </div>
       </section>
@@ -81,8 +86,8 @@ export default function Home() {
 
         {/* Section header */}
         <div className="mb-10 pb-6 border-b border-white/5">
-          <p className="text-xs font-mono tracking-widest text-zinc-600 uppercase mb-2">// selected work</p>
-          <h2 className="text-3xl font-bold text-white font-heading">Featured Projects</h2>
+          <p className="text-xs font-mono tracking-widest text-zinc-600 uppercase mb-2">{t("selectedWork")}</p>
+          <h2 className="text-3xl font-bold text-white font-heading">{t("featuredProjects")}</h2>
         </div>
 
         {/* Project list */}

@@ -1,11 +1,14 @@
+import { useLanguage } from "../context/LanguageContext";
+
 export default function Footer() {
+  const { t } = useLanguage();
   const currentYear = new Date().getFullYear();
 
   return (
     <footer className="w-full mt-20 mb-8 border-t border-white/5 pt-8 flex flex-col md:flex-row items-center justify-between text-sm text-zinc-500">
       <div className="flex items-center gap-2 mb-4 md:mb-0">
         <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>
-        <p>Available for freelance opportunities</p>
+        <p>{t("freelance")}</p>
       </div>
 
       <p>&copy; {currentYear} Thyne. All rights reserved.</p>
