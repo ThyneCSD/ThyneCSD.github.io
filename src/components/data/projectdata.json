@@ -71,6 +71,88 @@
       ],
       "git": "",
       "itch": ""
+    },
+    {
+      "id": "vr-shooter",
+      "title": "VrShooter",
+      "tagline": "Hier komt later nog info over dit project.",
+      "description": "Hier komt later nog info over dit project.\n\nMore info coming soon.",
+      "thumbnail": "https://picsum.photos/seed/vrshooter/1200/600",
+      "youtube": "",
+      "screenshots": [],
+      "tags": [
+        "Unity",
+        "C#",
+        "3D",
+        "VR",
+        "Shooter"
+      ],
+      "projectRole": "Hier komt later nog info",
+      "timeline": "Hier komt later nog info",
+      "mechanics": [
+        {
+          "subtitle": "Hier komt later nog info",
+          "description": "Hier komt later nog info over de mechanics van dit project.",
+          "image": "",
+          "code": ""
+        }
+      ],
+      "git": "",
+      "itch": ""
+    },
+    {
+      "id": "kuru-kuru-kururin",
+      "title": "Kuru Kuru Kururin",
+      "tagline": "Hier komt later nog info over dit project.",
+      "description": "Hier komt later nog info over dit project.\n\nMore info coming soon.",
+      "thumbnail": "https://picsum.photos/seed/kururin/1200/600",
+      "youtube": "",
+      "screenshots": [],
+      "tags": [
+        "Unity",
+        "C#",
+        "2D",
+        "Puzzle"
+      ],
+      "projectRole": "Hier komt later nog info",
+      "timeline": "Hier komt later nog info",
+      "mechanics": [
+        {
+          "subtitle": "Hier komt later nog info",
+          "description": "Hier komt later nog info over de mechanics van dit project.",
+          "image": "",
+          "code": ""
+        }
+      ],
+      "git": "",
+      "itch": ""
+    },
+    {
+      "id": "project-publish",
+      "title": "Project publish",
+      "tagline": "Hier komt later nog info over dit project.",
+      "description": "Hier komt later nog info over dit project.\n\nMore info coming soon.",
+      "thumbnail": "https://picsum.photos/seed/publish/1200/600",
+      "youtube": "",
+      "screenshots": [],
+      "tags": [
+        "Unity",
+        "C#",
+        "3D",
+        "Publish"
+      ],
+      "projectRole": "Hier komt later nog info",
+      "timeline": "Hier komt later nog info",
+      "mechanics": [
+        {
+          "subtitle": "Hier komt later nog info",
+          "description": "Hier komt later nog info over de mechanics van dit project.",
+          "image": "",
+          "code": ""
+        }
+      ],
+      "git": "",
+      "itch": ""
     }
   ]
 }
