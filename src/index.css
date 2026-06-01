@@ -93,6 +93,7 @@ body {
 /* Steady climbing animation for the massive army of GIFs */
 .subaru-climb {
   animation: slow-climb 10s infinite linear;
+  cursor: crosshair;
 }
 
 @keyframes slow-climb {
@@ -101,3 +102,59 @@ body {
   90% { opacity: 0.8; filter: brightness(1); }
   100% { transform: translateY(-50vh) scale(1.2); opacity: 0; filter: brightness(0.2); }
 }
+
+/* Explosion Animation */
+.exploded {
+  animation: explosion 0.5s forwards ease-out;
+  pointer-events: none;
+}
+
+@keyframes explosion {
+  0% { transform: scale(1); filter: brightness(1) sepia(0); opacity: 1; }
+  20% { transform: scale(1.5); filter: brightness(2) sepia(1) hue-rotate(-50deg); opacity: 1; }
+  100% { transform: scale(3); filter: brightness(5) sepia(1) hue-rotate(-50deg); opacity: 0; }
+}
+
+/* Return by Death Overlay */
+.rbd-overlay {
+  position: fixed;
+  inset: 0;
+  background: black;
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: rbd-enter 0.3s forwards cubic-bezier(0.95, 0.05, 0.795, 0.035);
+}
+
+.rbd-text {
+  color: #ff0000;
+  font-size: 8rem;
+  font-weight: 900;
+  letter-spacing: 0.5rem;
+  text-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+  animation: rbd-glitch 0.2s infinite;
+}
+
+@keyframes rbd-enter {
+  0% { opacity: 0; transform: scale(1.2); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes rbd-glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); filter: contrast(200%); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); filter: brightness(150%); }
+  80% { transform: translate(2px, -2px); }
+  100% { transform: translate(0); }
+}
+
+.rbd-fade-out {
+  animation: fade-out 2s forwards;
+}
+
+@keyframes fade-out {
+  to { opacity: 0; }
+}
